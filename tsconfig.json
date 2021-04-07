@@ -1,21 +1,29 @@
 {
   "version": "1.8.0",
+  "compileOnSave": true,
   "compilerOptions": {
-    "outDir": "build/compiled",
+    "allowJs": true,
+    "outDir": "dist",
     "lib": [
-      "es6"
+      "esnext",
     ],
-    "target": "es5",
+    "target": "esnext",
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "noImplicitAny": true,
-    "declaration": true
+    "noImplicitAny": false,
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "exclude": [
-    "build",
+    "dist",
     "node_modules"
   ]
 }

@@ -1,11 +1,3 @@
-export class EventQueue {
-  constructor() {
-    // 创建事件队列
-    creatQueue(this);
-    // 初始化状态机数据
-  }
-}
-
 // 创建事件队列
 function creatQueue(that: any): void {
   let queue: any[] = [];
@@ -25,4 +17,13 @@ function creatQueue(that: any): void {
     }
   });
   that.$_enentQueue = queue;
+}
+
+export class EventQueue {
+  $_enentQueue: any;
+  constructor() {
+    // 创建事件队列
+    creatQueue(this);
+    return this.$_enentQueue;
+  }
 }
